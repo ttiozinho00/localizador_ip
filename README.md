@@ -6,7 +6,7 @@ codigo feito em python rastreador de IP vrtual.
 # modo de utilizar
 
 ```
-python localizador.py -i (coloque o ip)
+python3 localizador.py -i (coloque o ip)
 ```
 
 # modo de ver o IP
