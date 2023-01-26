@@ -4,6 +4,9 @@ from bs4 import BeautifulSoup
 import requests
 import argparse
 import urllib.request
+import os
+
+os.system("clear")
 
 def show_result(infos):
     show_info = (
@@ -39,7 +42,7 @@ def get_data(ip_address):
 
 def search_informations(data):
     if data is not None:
-        informations = BeautifulSoup(data)
+        informations = BeautifulSoup(data, features="lxml")
         data_ip = informations.findAll("div", {"class": "sidebar-data hidden-xs hidden-sm"})
         return take_informations(data_ip)
 
