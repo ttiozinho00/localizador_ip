@@ -9,13 +9,12 @@ import os
 os.system("clear")
 
 def show_result(infos):
-    show_info = (
-                "IP {0}\n".format(infos["IP Address"]) +
-                "Longitude: {0}\n".format(infos["Longitude"]) +
-                "Latitude: {0}\n".format(infos["Latitude"]) +
-                "Estado: {0}\n".format(infos["Region"]) +
-                "Cidade: {0}\n".format(infos["City"]) 
-    )
+    if 'Address' not in infos:
+        infos['Address'] = "N/A"
+    if 'Street' not in infos:
+        infos['Street'] = "N/A"
+        
+    show_info = ("IP {0}\n".format(infos["IP Address"]) + "Longitude: {0}\n".format(infos["Longitude"]) + "Latitude: {0}\n".format(infos["Latitude"]) + "Estado: {0}\n".format(infos["Region"]) + "Cidade: {0}\n".format(infos["City"]) + "Endereco: {0}\n".format(infos["Address"]) + "Rua: {0}\n".format(infos["Street"]))
     if 'Local Time' in infos:
         show_info += "Horario do Local: {0}\n".format(infos["Local Time"])
     show_info += "Pais: {0}\n".format(infos["Country Code"])
